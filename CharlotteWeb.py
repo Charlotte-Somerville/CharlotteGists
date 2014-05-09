@@ -6,12 +6,10 @@ app.config['DEBUG'] = True
 
 @app.route("/", methods=["GET"])
 def hello():
-	return '<a href="/about">about me</a><a href="/clock">clock</a>'
+	return render_template("Html_for_webpage.html")
 
 @app.route('/', methods=['POST'])
 def comment():
-	print request.form
-	sys.stdout.flush()
 	return redirect('/')
 
 @app.route("/about")
